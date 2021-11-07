@@ -1,0 +1,97 @@
+Report of PES1201800682
+
+
+
+1. What is average degree of a vertex in the graph?
+
+Explanation:
+To find the average degree, I have counted the sum of the degrees of all the nodes and I have then divided the sum by the number of nodes. Division operation in c language gives only the quotient of the division. 
+In the adjacency matrix, each row represents the connections of one vertex, a value 1 implies that the vertex has a link to the corresponding row number and we can increment the degree value of the vertex corresponding to the row number by 1.
+
+
+
+2. Is the graph a regular graph?
+
+Explanation:
+A graph G=(V,E) is called a regular graph if the degree of all the vertices in the graph are same.
+Therefore, I have found out the degree of each vertex and stored it in an array, then I have used a for loop and checked if all the values in the array are same. I am returning 1 if all the values are same else I am returning 0.
+
+
+3. Is the graph a complete graph?
+
+Explanation:
+A simple graph G=(V,E) is called a complete graph if there exists an edge between every pair of verices.
+This means that in the adjacency matrix of the graph, only the principal diagonal elements will be 0s. This is because a vertex is not connected to itself and therefore the value when row number is equal to column number is zero in the adjacency matrix.
+I'm using two for loops and checking if all the elements other than the principal diagonal elements are 1s and I am returning 1 if this condition is satisfied else I am returning 0.
+
+
+
+4. Is the graph a cycle graph?
+
+Explanation:
+In a cycle graph the degree of all the vertices is exactly 2.
+I am finding the degree of each vertex using two for loops, storing it in an array and then I'm checking if all the elements in the array is 2. If all the elements are 2s the graph is a cycle graph and hence I am returning 1 else I am returning 0.
+
+
+
+
+5. Is the graph a path graph but not a cycle graph?
+
+Explanation:
+A path graph P(n) is a graph which has exactly two vertices with degree 1 (pendant vertices) and the degrees of all the other verices is 2.
+I am finding and storing the degrees of all the vertices in an array, then I am counting the number of vertices with degree 1 and the number of vertices of degree 2, the sum of these two numbers must be equal to the number of vertices in the graph to guarantee that all nodes are of degrees 1 or 2. Then I check if there are exactly two vertices with degree 1 for the graph to be a path graph.
+
+
+
+
+6. Does the graph has an Euler circuit?
+
+Explanation:
+A graph has a Euler circuit if the degrees of all the vertices are even.
+I am finding and storing the degrees of all the vertices in an array and then checking if all the elements in the array are even, if so the graph has a Euler circuit and the function returns 1 else the graph doesn't have a Euler circuit and the function returns 0.
+
+
+
+7. Does the graph has an Euler path but not an Euler circuit?
+
+Explanation:
+This happens when the graph has exactly two vertices of odd degree.
+To get a Euler circuit these two vertices are connected and then these two vertices will get an even degree.
+I am finding and storing the degrees of all the vertices in an array and then checking for the number of odd degree vertices, if this is 2 the function return 1 else returns 0.
+
+
+
+
+
+8. Does the graph satisfy the sufficient condition of the Ore's theorem?
+
+Explanation:
+
+Sufficient condition for the graph to have a Hamiltonian circuit according to the Ore's theorem:
+ deg(u) + deg(v) ≥ n for every pair of nonadjacent vertices u and v in the graph.
+
+
+
+
+
+For every possibility of two nodes I'll check if both of them are connected using the adjacency matrix and if they are not connected it is confirmed that the two nodes are non adjacent. When the two nodes are not adjacent I'll calculate the degrees of both the nodes, add them and check if the sum of their degrees is less than the number of nodes, if so I'll return 0, when this condition is never satisfied the control comes out of both the loops and then I return 1 because the Ore's theorem is satisfied.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
